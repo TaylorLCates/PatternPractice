@@ -1,8 +1,8 @@
 package Root;
 
-public class SingleObject {
+public final class SingleObject {
 
-    private static SingleObject instance = new SingleObject();
+    private static final SingleObject instance = new SingleObject();
 
     private SingleObject(){
     }

@@ -2,9 +2,11 @@ package Root;
 
 public class GreetingFactory {
 
+   private NullGreeting nullGreeting = new NullGreeting();
+
     public Greeting getGreeting(String greeting){
         if (greeting == null) {
-            return null;
+            return nullGreeting;
         }
         if (greeting.equalsIgnoreCase("Hi")) {
             return new Hi();
@@ -15,6 +17,6 @@ public class GreetingFactory {
         if (greeting.equalsIgnoreCase("Whatsup")) {
             return new WhatsUp();
         }
-        return null;
+        return nullGreeting;
     }
 }

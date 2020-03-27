@@ -22,10 +22,12 @@ public class Main {
         Greeting hi = greetingFactory.getGreeting("Hi");
         Greeting hello = greetingFactory.getGreeting("Hello");
         Greeting whatsUp = greetingFactory.getGreeting("Whatsup");
+        Greeting notAGreeting = greetingFactory.getGreeting("fojfoj");
 
         hi.greet();
         hello.greet();
         whatsUp.greet();
+        notAGreeting.greet();
     }
 
 
