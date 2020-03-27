@@ -1,8 +1,8 @@
-package Root;
+package com.improving.Main.FactoryAndNull;
 
 public class GreetingFactory {
 
-   private NullGreeting nullGreeting = new NullGreeting();
+   private final NullGreeting nullGreeting = new NullGreeting();
 
     public Greeting getGreeting(String greeting){
         if (greeting == null) {

@@ -1,4 +1,4 @@
-package Root;
+package com.improving.Main.FactoryAndNull;
 
 public class Hi implements Greeting {
     @Override

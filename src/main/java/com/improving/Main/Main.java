@@ -1,4 +1,15 @@
-package Root;
+package com.improving.Main;
+
+import com.improving.Main.FactoryAndNull.Greeting;
+import com.improving.Main.FactoryAndNull.GreetingFactory;
+import com.improving.Main.Builder.*;
+import com.improving.Main.Prototype.Ball;
+import com.improving.Main.Prototype.BallCache;
+import com.improving.Main.Singleton.SingleObject;
+import com.improving.Main.Strategy.OperationAdd;
+import com.improving.Main.Strategy.OperationDivide;
+import com.improving.Main.Strategy.OperationSubtract;
+import com.improving.Main.Strategy.StrategyContext;
 
 public class Main {
 
@@ -16,7 +27,7 @@ public class Main {
 
         object.showMessage();
 
-        //Factory
+        //Factory and Null Object Pattern
         GreetingFactory greetingFactory = new GreetingFactory();
 
         Greeting hi = greetingFactory.getGreeting("Hi");
@@ -29,13 +40,24 @@ public class Main {
         whatsUp.greet();
         notAGreeting.greet();
 
-        //strategy
+        //Strategy
         StrategyContext context = new StrategyContext(new OperationAdd());
         System.out.println(context.executeStrategy(5, 7));
         context = new StrategyContext(new OperationDivide());
         System.out.println(context.executeStrategy(10, 5));
         context = new StrategyContext(new OperationSubtract());
         System.out.println(context.executeStrategy(11, 4));
+
+        //Prototype
+        BallCache.loadCache();
+
+        Ball clonedBall1 = (Ball) BallCache.getBall("1");
+        Ball clonedBall2 = BallCache.getBall("2");
+        Ball clonedBall3 = BallCache.getBall("3");
+
+        clonedBall1.bounce();
+        clonedBall2.bounce();
+        clonedBall3.bounce();
     }
 
 

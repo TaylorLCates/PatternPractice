@@ -1,4 +1,4 @@
-package Root;
+package com.improving.Main.Singleton;
 
 public final class SingleObject {
 

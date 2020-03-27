@@ -1,4 +1,4 @@
-package Root;
+package com.improving.Main.Strategy;
 
 public class StrategyContext {
     private Strategy strategy;
