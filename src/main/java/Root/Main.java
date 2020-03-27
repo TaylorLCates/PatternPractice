@@ -28,6 +28,14 @@ public class Main {
         hello.greet();
         whatsUp.greet();
         notAGreeting.greet();
+
+        //strategy
+        StrategyContext context = new StrategyContext(new OperationAdd());
+        System.out.println(context.executeStrategy(5, 7));
+        context = new StrategyContext(new OperationDivide());
+        System.out.println(context.executeStrategy(10, 5));
+        context = new StrategyContext(new OperationSubtract());
+        System.out.println(context.executeStrategy(11, 4));
     }
 
 
