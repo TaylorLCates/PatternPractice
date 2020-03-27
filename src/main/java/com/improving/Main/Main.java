@@ -1,5 +1,6 @@
 package com.improving.Main;
 
+import com.improving.Main.Facade.AnimalFacade;
 import com.improving.Main.FactoryAndNull.Greeting;
 import com.improving.Main.FactoryAndNull.GreetingFactory;
 import com.improving.Main.Builder.*;
@@ -58,7 +59,12 @@ public class Main {
         clonedBall1.bounce();
         clonedBall2.bounce();
         clonedBall3.bounce();
+
+        //Facade
+        AnimalFacade animalFacade = new AnimalFacade();
+
+        animalFacade.makeCatEat();
+        animalFacade.makeDogEat();
+        animalFacade.makeLizardEat();
     }
-
-
 }
