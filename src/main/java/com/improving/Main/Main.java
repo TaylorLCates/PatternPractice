@@ -1,5 +1,6 @@
 package com.improving.Main;
 
+import com.improving.Main.Adapter.MediaPlayer;
 import com.improving.Main.Facade.AnimalFacade;
 import com.improving.Main.FactoryAndNull.Greeting;
 import com.improving.Main.FactoryAndNull.GreetingFactory;
@@ -66,5 +67,13 @@ public class Main {
         animalFacade.makeCatEat();
         animalFacade.makeDogEat();
         animalFacade.makeLizardEat();
+
+        //Adapter
+        MediaPlayer mediaPlayer = new MediaPlayer();
+
+        mediaPlayer.play("MP4", "Titanic");
+        mediaPlayer.play("WMV", "Good Will Hunting");
+        mediaPlayer.play("MOV", "Sharknado");
+        mediaPlayer.play("FLV", "Superman 18");
     }
 }
