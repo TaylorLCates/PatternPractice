@@ -1,6 +1,7 @@
 package com.improving.Main;
 
 import com.improving.Main.Adapter.MediaPlayer;
+import com.improving.Main.Bridge.*;
 import com.improving.Main.Facade.AnimalFacade;
 import com.improving.Main.FactoryAndNull.Greeting;
 import com.improving.Main.FactoryAndNull.GreetingFactory;
@@ -53,7 +54,7 @@ public class Main {
         //Prototype
         BallCache.loadCache();
 
-        Ball clonedBall1 = (Ball) BallCache.getBall("1");
+        Ball clonedBall1 = BallCache.getBall("1");
         Ball clonedBall2 = BallCache.getBall("2");
         Ball clonedBall3 = BallCache.getBall("3");
 
@@ -75,5 +76,12 @@ public class Main {
         mediaPlayer.play("WMV", "Good Will Hunting");
         mediaPlayer.play("MOV", "Sharknado");
         mediaPlayer.play("FLV", "Superman 18");
+
+        //Bridge
+        Painting acrylicPainting = new AcrylicPainting(new AcrylicPainter());
+        Painting oilPainting = new OilPainting(new OilPainter());
+
+        acrylicPainting.display();
+        oilPainting.display();
     }
 }
